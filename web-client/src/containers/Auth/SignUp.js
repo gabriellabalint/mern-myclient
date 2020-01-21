@@ -80,6 +80,11 @@ class SignUp extends React.Component {
                 type="password"
                 component={this.renderInput}
               />
+              {error && (
+                <div className="ui error message">
+                  <div className="header">{error}</div>
+                </div>
+              )}
               <button
                 disabled={pristine || submitting || !valid}
                 className="ui button primary"
@@ -95,11 +100,6 @@ class SignUp extends React.Component {
               >
                 Reset
               </button>
-              {error && (
-                <div className="ui error message">
-                  <div className="header">{error}</div>
-                </div>
-              )}
             </form>
           </div>
         </div>
