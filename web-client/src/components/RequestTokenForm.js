@@ -33,6 +33,7 @@ class RequestTokenForm extends React.Component {
   onSubmit = formValues => {
     formValues.tokenPurpose = this.props.tokenPurpose;
     return this.props.onSubmit(formValues).then(() => {
+      // FIXME: Should show successful message
       if (this.props.errorMessage) {
         throw new SubmissionError({ _error: this.props.errorMessage });
       }
